@@ -20,7 +20,7 @@ function App() {
       });
   
   useEffect(() => {
-    let url = `http://api.openweathermap.org/data/2.5/weather?lat=${saveLo[0]}&lon=${saveLo[1]}&appid=e83dfacbf543995a2d9e1b6aae5bb027&units=metric`
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${saveLo[0]}&lon=${saveLo[1]}&appid=e83dfacbf543995a2d9e1b6aae5bb027&units=metric`
     fetch(url, { mode: "cors" })
     .then((get) => get.json())
     .then((data) => {
