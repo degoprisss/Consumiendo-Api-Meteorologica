@@ -8,8 +8,8 @@ import React, { useEffect, useState } from "react";
 
 
 function App() {
-  let lat = 51.5085;
-  let long = -0.1257;
+  let lat;
+  let long;
   let saveLocation  = [lat, long];
   const [data, setData] = useState(undefined)
   
