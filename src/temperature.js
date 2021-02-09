@@ -2,7 +2,7 @@ import React, { useState } from "react";
 function Temperature(props) {
     let temperature = props.temperature.main.temp; 
     let iconcode = props.temperature.weather[0].icon;
-    let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+    let iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
     
     return (
         <div className="container-degrees">
