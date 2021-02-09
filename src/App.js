@@ -8,19 +8,21 @@ import React, { useEffect, useState } from "react";
 
 
 function App() {
-
+  let lat = 51.5085;
+  let long = -0.1257;
+  let saveLocation  = [lat, long];
   const [data, setData] = useState(undefined)
-  const [loca, setLoca] = useState([9.273344, -74.6422272])
   
-
-  navigator.geolocation.watchPosition((props) => {
-    setLoca([props.coords.latitude, props.coords.longitude])
-  });
-
+  navigator.geolocation.getCurrentPosition((props) => {
+    lat = props.coords.latitude;
+    long = props.coords.longitude;
+    saveLocation = [lat, long]
+  }); 
+  
 
   useEffect(() => {
-  
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${loca[0]}&lon=${loca[1]}&appid=e83dfacbf543995a2d9e1b6aae5bb027&units=metric`
+
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${saveLocation[0]}&lon=${saveLocation[1]}&appid=e83dfacbf543995a2d9e1b6aae5bb027&units=metric`
     fetch(url, { mode: "cors" })
       .then((get) => get.json())
       .then((data) => {
