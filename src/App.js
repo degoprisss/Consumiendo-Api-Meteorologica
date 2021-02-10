@@ -11,7 +11,6 @@ import React, { useEffect, useState } from "react";
 function App() {
   let lat;
   let long;
-  // let saveLocation  = [lat, long];
   const [data, setData] = useState(undefined)
   const [saveLo, setSaveLo] = useState([0, 0])
   
@@ -19,7 +18,6 @@ function App() {
   navigator.geolocation.getCurrentPosition((props) => {
    lat = props.coords.latitude;
    long = props.coords.longitude;
-  //   saveLocation = [lat, long]
   setSaveLo([lat, long])
   }); 
 }
